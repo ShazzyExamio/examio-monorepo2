@@ -1,0 +1,23 @@
+{
+  "name": "examio-monorepo",
+   "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^5.1.0",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "metro-config": "^0.56.0"
+  },
+  "scripts": {
+    "ios": "lerna --scope=examio-native-app run ios --stream --",
+    "web": "lerna --scope=examio-react-app run start"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": ["**/react-native", "**/react-native/**", "**/expo", "**/expo/**"]
+  }
+}
